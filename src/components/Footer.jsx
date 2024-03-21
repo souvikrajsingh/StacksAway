@@ -1,6 +1,6 @@
 import React from "react";
 import FooterLarge from "./FooterLarge";
-import { GoArrowRight } from "react-icons/go";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Footer = () => {
   const Link = ({ href, children }) => (
@@ -8,8 +8,8 @@ const Footer = () => {
       <a href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
-      <GoArrowRight
-        className="group-hover:translate-x-2 transition-all ease-in-out-circ duration-500"
+      <GoArrowUpRight
+        className="group-hover:-translate-y-2 group-hover:translate-x-2 transition-all ease-in-out-circ duration-500"
         size={18}
       />
     </div>
