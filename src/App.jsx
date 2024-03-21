@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Custombutton from "./components/Custombutton";
 import { useState } from "react";
+import Footer from "./components/Footer";
+
 export default function App() {
   const [selectedButton, setSelectedButton] = useState("All");
 
@@ -89,6 +91,8 @@ export default function App() {
           <div></div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }
