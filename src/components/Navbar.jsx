@@ -5,7 +5,7 @@ import Button from "./Buttons";
 
 function Navbar() {
   return (
-    <div className=" border-b-2 border-b-dim-gray border-opacity-30">
+    <div className=" border-b-2 px-8 border-b-dim-gray border-opacity-30 font-cabinG">
       <nav className="px-0 sm:px-6 pt-1 pb-2 xl:pb-4 2xl:pb-6  border-gray border-opacity-20 mt-4 xl:mt-8 2xl:mt-10  flex items-center justify-between">
         <div className="flex justify-start gap-4">
           <Logosimplewhite />

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Custombutton from "./components/Custombutton";
 import { useState } from "react";
 import Footer from "./components/Footer";
+import Sidenavigationbar from "./components/Sidenavigationbar";
 
 export default function App() {
   const [selectedButton, setSelectedButton] = useState("All");
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="font-cabinG">
         <section className="mx-auto flex flex-col items-center space-y-5 mt-20 mb-32">
           <h2 className="text-display text-h2 max-w-[20ch] text-center text-accent">
             Curated Opportunities
@@ -27,7 +28,7 @@ export default function App() {
         </section>
 
         <section>
-          <div className="fixed bottom-0 left-0 right-0 bg-bg p-4 flex justify-center gap-x-2 gap-y-2 sm:hidden z-50">
+          <div className="fixed bottom-0 left-0 right-0 bg-bg p-4 flex justify-center gap-x-2 gap-y-2 sm:hidden z-50 ">
             <button className="py-4 px-4 flex gap-x-1 font-bold border bg-dark-charcoal border-dim-gray rounded-md hover:border-text transition-all text-sm items-center w-full justify-between  text-accent">
               All
               <span>
@@ -87,8 +88,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
         <section>
-          <div></div>
+          <Sidenavigationbar />
         </section>
       </main>
 
