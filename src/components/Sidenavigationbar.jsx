@@ -32,7 +32,7 @@ const Sidenavigationbar = () => {
               type="checkbox"
               checked={selectedMonths.includes(month)}
               onChange={() => handleMonthClick(month)}
-              className="transition duration-200 ease-in-out "
+              className="transition duration-200 ease-in-out"
             />
             <span className="pl-2">{month}</span>
           </label>
