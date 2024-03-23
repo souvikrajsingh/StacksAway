@@ -16,7 +16,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="px-6 sm">
+    <footer className="mx-4">
       <div className="border-b border-b-dim-gray pb-6 mt-8"></div>
       <div className="mt-4 mb-96">
         <FooterLarge className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3" />
