@@ -4,10 +4,38 @@ import Custombutton from "./components/Custombutton";
 import { useState } from "react";
 import Footer from "./components/Footer";
 import Sidenavigationbar from "./components/Sidenavigationbar";
+import Card from "./components/Card/Card";
+import PlusIcon from "./components/Plusicon";
 
 export default function App() {
-  const [selectedButton, setSelectedButton] = useState("All");
+  const cardData = [
+    {
+      month: "January",
+      title: "Major League Hacking",
+      program: "Mentorship",
+      picUrl: "./assets/mlh-logo-color-white.png",
+    },
+    {
+      month: "January",
+      title: "Microsoft Learn Student Ambassadors",
+      program: "Student Programs",
+      picUrl: "./assets/mlsa.jpg",
+    },
+    {
+      month: "January",
+      title: "Github Campus Expert",
+      program: "Student Programs",
+      picUrl: "./assets/gce.png",
+    },
+    {
+      month: "July",
+      title: "Google Summer of Code",
+      program: "Os Programs",
+      picUrl: "./assets/gsoc.png",
+    },
+  ];
 
+  const [selectedButton, setSelectedButton] = useState("All");
   const handleButtonClick = (text) => {
     setSelectedButton(text);
   };
@@ -21,7 +49,7 @@ export default function App() {
             Curated Opportunities
             <span className="text-light-gray pl-2">for students :| </span>
           </h2>
-          <p class="text-text mx-auto text-base text-center xl:text-h6 2xl:text-h5 pt-5 max-w-[50ch]">
+          <p className="text-text mx-auto text-base text-center xl:text-h6 2xl:text-h5 pt-5 max-w-[50ch]">
             Explore curated and handpicked opportunities that enhance your
             experience in tech.
           </p>
@@ -32,17 +60,7 @@ export default function App() {
             <button className="py-4 px-4 flex gap-x-1 font-bold border bg-dark-charcoal border-dim-gray rounded-md hover:border-text transition-all text-sm items-center w-full justify-between  text-accent">
               All
               <span>
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M11.75 4.5a.75.75 0 0 1 .75.75V11h5.75a.75.75 0 0 1 0 1.5H12.5v5.75a.75.75 0 0 1-1.5 0V12.5H5.25a.75.75 0 0 1 0-1.5H11V5.25a.75.75 0 0 1 .75-.75Z"></path>
-                </svg>
+                <PlusIcon />
               </span>
             </button>
           </div>
@@ -89,9 +107,23 @@ export default function App() {
           </div>
         </section>
 
-        <section>
-          <Sidenavigationbar />
-        </section>
+        <div className="grid grid-cols-3 gap-2">
+          <div>
+            <Sidenavigationbar />
+          </div>
+          <div className="col-span-2 grid grid-cols-2 gap-6  gap-y-6  pr-14 ml-[-80px]">
+            {cardData.map((card, index) => (
+              <div key={index}>
+                <Card
+                  month={card.month}
+                  title={card.title}
+                  program={card.program}
+                  picUrl={card.picUrl}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </main>
 
       <Footer />
