@@ -12,7 +12,7 @@ export default function App() {
     {
       month: "January",
       title: "Major League Hacking",
-      program: "Mentorship",
+      program: "Mentorships",
       picUrl: "./assets/mlh-logo-color-white.png",
     },
     {
@@ -28,16 +28,83 @@ export default function App() {
       picUrl: "./assets/gce.png",
     },
     {
-      month: "July",
+      month: "February",
+      title: "Google Season of Docs",
+      program: "Open Source Programs",
+      picUrl: "./assets/gsod.png",
+    },
+    {
+      month: "March",
       title: "Google Summer of Code",
-      program: "Os Programs",
+      program: "Open Source Programs",
       picUrl: "./assets/gsoc.png",
+    },
+
+    {
+      month: "October",
+      title: "Hacktoberfest",
+      program: "Open Source Programs",
+      picUrl: "./assets/hacktoberfest.png",
+    },
+
+    {
+      month: "Varies",
+      title: "Outreachy",
+      program: "Open Source Programs",
+      picUrl: "./assets/outreachy.png",
+    },
+    {
+      month: "August",
+      title: "Season of KDE",
+      program: "Open Source Programs",
+      picUrl: "./assets/kde.png",
+    },
+    {
+      month: "February",
+      title: "Open Mainframe Project Mentorship Program",
+      program: "Mentorships",
+      picUrl: "./assets/omp.png",
+    },
+    {
+      month: "Two months",
+      title: "FOSSASIA Codeheat",
+      program: "Open Source Programs",
+      picUrl: "./assets/fossasia.png",
+    },
+
+    {
+      month: "September",
+      title: "Redox OS Summer of Code",
+      program: "Open Source Programs",
+      picUrl: "./assets/r.png",
+    },
+    {
+      month: "December",
+      title: "Hyperledger Mentorship Program",
+      program: "Mentorships",
+      picUrl: "./assets/hmp.png",
+    },
+    {
+      month: "April",
+      title: "Open Summer of Code",
+      program: "Open Source Programs",
+      picUrl: "./assets/oso.png",
+    },
+    {
+      month: "April",
+      title: "GirlScript Summer of Code (GSSoC)",
+      program: "Open Source Programs",
+      picUrl: "./assets/gssoc.png",
     },
   ];
 
   const [selectedButton, setSelectedButton] = useState("All");
   const handleButtonClick = (text) => {
-    setSelectedButton(text);
+    if (selectedButton === text) {
+      setSelectedButton("All");
+    } else {
+      setSelectedButton(text);
+    }
   };
 
   return (
@@ -65,13 +132,13 @@ export default function App() {
             </button>
           </div>
 
-          <div className="mb-8 sticky top-6 z-50 justify-center gap-x-2 flex-wrap gap-y-2 hidden sm:flex">
+          <div className="mb-8  z-50 justify-center gap-x-2 flex-wrap gap-y-2 hidden sm:flex">
             <div className="flex gap-x-0 bg-dark-charcoal rounded-xl border border-outline border-opacity-15">
               <Custombutton
-                text="OS Programs"
+                text="Open Source Programs"
                 count={4}
-                isSelected={selectedButton === "OS Programs"}
-                onClick={() => handleButtonClick("OS Programs")}
+                isSelected={selectedButton === "Open Source Programs"}
+                onClick={() => handleButtonClick("Open Source Programs")}
               />
               <Custombutton
                 text="Hackathons"
@@ -112,16 +179,21 @@ export default function App() {
             <Sidenavigationbar />
           </div>
           <div className="col-span-2 grid grid-cols-2 gap-6  gap-y-6  pr-14 ml-[-80px]">
-            {cardData.map((card, index) => (
-              <div key={index}>
-                <Card
-                  month={card.month}
-                  title={card.title}
-                  program={card.program}
-                  picUrl={card.picUrl}
-                />
-              </div>
-            ))}
+            {cardData
+              .filter(
+                (card) =>
+                  selectedButton === "All" || card.program === selectedButton
+              )
+              .map((card, index) => (
+                <div key={index}>
+                  <Card
+                    month={card.month}
+                    title={card.title}
+                    program={card.program}
+                    picUrl={card.picUrl}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </main>

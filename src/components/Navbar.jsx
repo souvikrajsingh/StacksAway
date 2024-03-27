@@ -1,6 +1,5 @@
 import React from "react";
 import Logosimplewhite from "./Logosimplewhite";
-import Logofull from "./Logofull";
 import Button from "./Buttons";
 import { Link } from "react-router-dom";
 

@@ -23,7 +23,7 @@ const Sidenavigationbar = () => {
   ];
 
   return (
-    <div className="pl-8 font-bold text-lg text-light-gray ">
+    <div className="pl-8 font-bold text-lg text-light-gray sticky top-4 ">
       <div className=" left-0  w-64 border-b-2 p-6 border-b-dim-gray  bg-dark-charcoal rounded-xl border border-outline border-opacity-15">
         <h2 className="pl-3">Months</h2>
         {months.map((month) => (
